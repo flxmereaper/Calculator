@@ -19,7 +19,7 @@ public class NumberTester {
             while ((line = br.readLine()) != null) {
                 String[] lineArr = line.split(" ");
                 switch (lineArr[0]) {
-                    case "1": handleOddEvenTest(Integer.parseInt(lineArr[1])); break;
+                    case "1": handleOddTest(Integer.parseInt(lineArr[1])); break;
                     case "2": handlePrimeTest(Integer.parseInt(lineArr[1])); break;
                     case "3": handlePalindromeTest(Integer.parseInt(lineArr[1])); break;
                 }
@@ -56,7 +56,7 @@ public class NumberTester {
             System.out.println(number + " is not a palindrome!");
         }
     }
-    private void handleOddEvenTest(int number) {
+    private void handleOddTest(int number) {
         if(oddTester == null) {
             setOddTester(cache -> {
                 if(cache % 2 == 0) {
