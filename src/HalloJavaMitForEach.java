@@ -12,6 +12,5 @@ public class HalloJavaMitForEach {
             System.out.println(s);
         }
         strings.forEach(System.out::println);
-
     }
 }
