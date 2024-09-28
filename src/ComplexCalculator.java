@@ -45,9 +45,11 @@ public class ComplexCalculator extends AbstractCalculator{
             Number cache = new Number();
             cache.setA(y.getA());
             cache.setB(-y.getB());
-            x.setA(x.getA()*y.getA());
-            x.setB(x.getB()*-y.getB());
-            double dividend = y.getA()*y.getA() + y.getB()*y.getB();;
+            double real = x.getA()*cache.getA()-x.getB()*cache.getB(); //Realteil (i² ist -1)
+            double imagine = x.getB()*cache.getA()+x.getA()*cache.getB(); //Imgainärteil
+            x.setA(real);
+            x.setB(imagine);
+            double dividend = y.getA()*y.getA() + y.getB()*y.getB();
             result.setA(x.getA()/dividend);
             result.setB(x.getB()/dividend);
             return result;
