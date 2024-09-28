@@ -33,8 +33,8 @@ public class ComplexCalculator extends AbstractCalculator{
     public static CalculateOperation getMultiplyOperation() {
         return ((x, y) ->  {
             Number result = new Number();
-            result.setA(x.getA()*x.getB()-y.getA()*y.getB());
-            result.setB(x.getA()*y.getB()+x.getB()*y.getA());
+            result.setA(x.getA()*y.getA() - x.getB()*y.getB());
+            result.setB(x.getA()*y.getB() + x.getB()*y.getA());
             return result;
         });
     }
@@ -60,7 +60,7 @@ public class ComplexCalculator extends AbstractCalculator{
         return ((x, y) -> {
             Number result = new Number();
             result.setA(x.getA() - y.getA());
-            result.setB(x.getB() - y.getB());
+            result.setB(x.getB() + y.getB()); //nur Realteil hat minus bei subtraktion
             return result;
         });
     }
