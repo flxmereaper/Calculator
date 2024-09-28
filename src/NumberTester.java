@@ -59,7 +59,7 @@ public class NumberTester {
     private void handleOddTest(int number) {
         if(oddTester == null) {
             setOddTester(cache -> {
-                if(cache % 2 == 0) {
+                if(cache % 2 != 0) {
                     return true;
                 }
                 return false;
