@@ -80,12 +80,7 @@ public class Main {
         System.out.println("Enter number yb:");
         y.setB(scanner.nextInt());
         AbstractCalculator vectorCalculator = new VectorCalculator();
-        Number result = showMenuAndCalc(vectorCalculator, x, y);
-        if(result != null) {
-            System.out.println("Result: " + result.getA());
-        } else {
-            System.out.println("Invalid input!");
-        }
+        showMenuAndCalc(vectorCalculator, x, y);
     }
     private static Number showMenuAndCalc(AbstractCalculator calculator, Number x, Number y) {
         System.out.println("Choose Operation:");
@@ -93,13 +88,23 @@ public class Main {
         System.out.println("2 - subtract");
         System.out.println("3 - Multiply");
         System.out.println("4 - Divide");
-
-        switch (scanner.nextInt()) {
-            case 1: return calculator.add(x, y);
-            case 2: return calculator.subtract(x, y);
-            case 3: return calculator.multiply(x, y);
-            case 4: return calculator.divide(x, y);
-            default: return null;
+        if(calculator instanceof VectorCalculator) {
+            Number result;
+            switch (scanner.nextInt()) {
+                case 1: result = calculator.add(x, y); System.out.println("Result: (" + result.getA() + "|" + result.getB() + ")"); return result;
+                case 2: result = calculator.subtract(x, y); System.out.println("Result: (" + result.getA() + "|" + result.getB() + ")"); return result;
+                case 3: result = calculator.multiply(x, y); System.out.println("Result: (" + result.getA() + "|" + result.getB() + ")"); return result;
+                case 4: result = calculator.divide(x, y); System.out.println("Result: (" + result.getA() + "|" + result.getB() + ")"); return result;
+                default: return null;
+            }
+        } else {
+            return switch (scanner.nextInt()) {
+                case 1 -> calculator.add(x, y);
+                case 2 -> calculator.subtract(x, y);
+                case 3 -> calculator.multiply(x, y);
+                case 4 -> calculator.divide(x, y);
+                default -> null;
+            };
         }
     }
 }
