@@ -94,8 +94,8 @@ public class Main {
             switch (scanner.nextInt()) {
                 case 1: result = calculator.add(x, y); System.out.println("Result: (" + result.getA() + "|" + result.getB() + ")"); return result;
                 case 2: result = calculator.subtract(x, y); System.out.println("Result: (" + result.getA() + "|" + result.getB() + ")"); return result;
-                case 3: result = calculator.multiply(x, y); System.out.println("Result: " + result.getA()); return result;
-                case 4: result = calculator.divide(x, y); System.out.println("Result: " + result.getA()); return result;
+                case 3: result = calculator.multiply(x, y); System.out.println("Scalar product: " + result.getA()); return result;
+                case 4: result = calculator.divide(x, y); System.out.println("Cross product: " + result.getA()); return result;
                 default: return null;
             }
         } else {
