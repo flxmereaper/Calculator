@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class HalloJavaMitForEach {
-    public void halloJavaMitForEach() {
+    public static void printWithLambda() {
         List<String> strings = new ArrayList<>();
         strings.add("Hello");
         strings.add("World");

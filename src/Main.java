@@ -5,8 +5,12 @@ import java.util.Scanner;
 public class Main {
     static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
+        HalloJavaMitForEach.printWithLambda();
+        System.out.println();
         NumberTester tester = new NumberTester("numbers.txt");
         tester.testFile();
+        System.out.println();
+        System.out.println();
         System.out.println();
         System.out.println("Welcome to the calculator!");
         while(true) {
