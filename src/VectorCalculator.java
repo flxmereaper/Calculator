@@ -41,9 +41,7 @@ public class VectorCalculator  extends AbstractCalculator {
     public static CalculateOperation getDivOperation() {
         return ((x, y) -> {
             Number result = new Number();
-            double scalar = x.getA()*y.getA() + x.getB()*y.getB();
-            double length = Math.sqrt((x.getA()*x.getA()) + (x.getB()*x.getB()));
-            result.setA(length/scalar);
+            result.setA(x.getA()*y.getB() - x.getB()*y.getA());
             return result;
         });
     }

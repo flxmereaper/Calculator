@@ -48,6 +48,7 @@ public class Main {
     private static void handleComplex() {
         Number x = new Number();
         Number y = new Number();
+        System.out.println("Please enter numbers without i at the end!");
         System.out.println("Enter number xa:");
         x.setA(scanner.nextInt());
         System.out.println("Enter number xb:");
@@ -93,8 +94,8 @@ public class Main {
             switch (scanner.nextInt()) {
                 case 1: result = calculator.add(x, y); System.out.println("Result: (" + result.getA() + "|" + result.getB() + ")"); return result;
                 case 2: result = calculator.subtract(x, y); System.out.println("Result: (" + result.getA() + "|" + result.getB() + ")"); return result;
-                case 3: result = calculator.multiply(x, y); System.out.println("Result: (" + result.getA() + "|" + result.getB() + ")"); return result;
-                case 4: result = calculator.divide(x, y); System.out.println("Result: (" + result.getA() + "|" + result.getB() + ")"); return result;
+                case 3: result = calculator.multiply(x, y); System.out.println("Result: " + result.getA()); return result;
+                case 4: result = calculator.divide(x, y); System.out.println("Result: " + result.getA()); return result;
                 default: return null;
             }
         } else {
